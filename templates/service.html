@@ -1,0 +1,116 @@
+{% extends "nav.html" %}
+
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Cream Services</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .service-container {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .service {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            animation: fadeIn 0.5s ease-in-out;
+            transition: transform 0.3s, background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .service:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            background-color: #e9ecef;
+        }
+
+        .service img {
+            max-width: 100%;
+            max-height: 150px;
+            margin-bottom: 10px;
+        }
+        .text-center{
+            background-color: #e9ecef;
+            margin-top:10px;
+        }
+        #img{
+            background-image:url("static/img/107.jpg");
+        }
+
+        
+    </style>
+</head>
+<body id="img">
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4"> <marquee behavior="" direction="left">Our Ice Cream Services</marquee> </h1>
+    <div class="service-container">
+        <p>Total Services: <span id="total-services">0</span></p>
+        <div class="row" id="services-container">
+            <!-- Services will be dynamically inserted here -->
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const services = [
+            { name: "Custom Ice Cream Cakes", img: "static/img/13.jpg" },
+            { name: "Ice Cream Truck Rental", img: "static/img/14.jpg" },
+            { name: "Ice Cream Sundae Bar", img: "static/img/5.jpg" },
+            { name: "Ice Cream Parties", img: "static/img/16.jpg" },
+            { name: "Corporate Ice Cream Events", img: "static/img/17.jpg" },
+            { name: "Ice Cream Fundraisers", img: "static/img/18.jpg" },
+            { name: "School Ice Cream Events", img: "static/img/19.jpg" },
+            { name: "Ice Cream Socials", img: "static/img/20.jpg" },
+            { name: "Wedding Ice Cream Catering", img: "static/img/21.jpg" },
+            { name: "Ice Cream Workshops", img: "static/img/10.jpg" },
+            { name: "Seasonal Ice Cream Specials", img: "static/img/23.jpg" },
+            { name: "Ice Cream Bar Services", img: "static/img/24.jpg" },
+            { name: "Ice Cream Float Bar", img: "static/img/251.jpg" },
+            { name: "Ice Cream Tasting Events", img: "static/img/26.jpg" },
+            { name: "Ice Cream Sampling", img: "static/img/111.jpg" },
+            { name: "Ice Cream Delivery", img: "static/img/2.jpg" },
+            { name: "Ice Cream Gift Baskets", img: "static/img/9.jpg" },
+            { name: "Ice Cream Subscription Service", img: "static/img/251.jpg" },
+            { name: "Ice Cream Pop-Up Events", img: "static/img/21.jpg" },
+            { name: "Ice Cream Social Media Campaigns", img: "static/img/2.jpg" },
+            // Add more services here
+        ];
+
+        const servicesContainer = document.getElementById('services-container');
+        const totalServicesElement = document.getElementById('total-services');
+
+        totalServicesElement.textContent = services.length;
+
+        services.forEach((service, index) => {
+            const serviceElement = document.createElement('div');
+            serviceElement.classList.add('col-md-4', 'service');
+            serviceElement.innerHTML = `
+                <img src="${service.img}" alt="${service.name}">
+                <h3>${service.name}</h3>
+            `;
+            servicesContainer.appendChild(serviceElement);
+        });
+    });
+</script>
+
+{% endblock body %}
+

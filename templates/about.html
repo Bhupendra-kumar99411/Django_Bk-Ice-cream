@@ -1,0 +1,109 @@
+{% extends "nav.html" %}
+
+{% block title %}About{% endblock title%}
+
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Bk Ice-Cream</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .about-section {
+            padding: 20px;
+            background: #f9f9f9;
+        }
+        .team-member {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .team-member img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .team-member img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .mission, .history {
+            margin-bottom: 30px;
+        }
+        .footer {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .brand {
+            text-align: center;
+            background: gray;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+{% comment %} <nav class="navbar navbar-expand-lg navbar-light bg-light"> {% endcomment %}
+    <h3 class="brand"> <marquee behavior="" direction="">Bk Ice-Cream Pure Natural</marquee></h3>
+
+<!-- About Section -->
+<div class="container about-section">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h2>About Us</h2>
+            <p>Welcome to IceCream Delight, where we serve happiness in every scoop!</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 history">
+            <h3>Our History</h3>
+            <p>Bk IceCream was founded in 2024 with the mission of bringing joy to every customer through our unique and delicious ice-cream flavors. Over the years, we have grown from a small shop to a beloved brand with multiple locations.</p>
+        </div>
+        <div class="col-md-6 mission">
+            <h3>Our Mission</h3>
+            <p>Our mission is to create the finest ice-cream using the freshest ingredients. We believe in innovation and continually strive to introduce new and exciting flavors to our menu.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 text-center">
+            <h3>Meet Our Team</h3>
+        </div>
+        <div class="col-md-4 team-member">
+            <img src="static/img/image1.png" alt="Bhupendra">
+            <h5>Bhupendra Kumar</h5>
+            <p>Founder & CEO</p>
+        </div>
+        <div class="col-md-4 team-member">
+            <img src="static/img/image2.jpg" alt="Ati">
+            <h5>Atiullah Ansari</h5>
+            <p>Head of Operations</p>
+        </div>
+        <div class="col-md-4 team-member">
+            <img src="static/img/image3.jpg" alt="Kannu Priya">
+            <h5>Kannu Priya</h5>
+            <p>Creative Director</p>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <p>&copy; 2024 Bk Ice-Cream. All rights reserved.</p>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+{% endblock body %}
