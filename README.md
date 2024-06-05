@@ -1,4 +1,4 @@
-# thisis the Ice-Cream Front-end project
+# this is the Ice-Cream Front-end project
 
 # if you wants to run thr code than use 
 # manage.py runserver
